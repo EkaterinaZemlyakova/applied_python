@@ -10,12 +10,16 @@ def run_tests():
         data = json.load(open(filename))
         params, response = data['params'], data['response']
         got = parse(**data['params'])
+
         for index, item in enumerate(response):
             if len(got) != len(response) or got[index] != response[index]:
                 print("Полученный и ожидаемый массивы различаются, получен: {} ожидался: {}, фаили {}".format(
                     str(got), str(response), filename
                 ))
                 return
+
+        print(f'{filename} passed !')
+
     print("All tests passed!")
 
 

@@ -1,7 +1,6 @@
 class Player:
     pass
 
-
 class HitsMatch:
     pass
 
